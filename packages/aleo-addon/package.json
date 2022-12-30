@@ -1,0 +1,21 @@
+{
+  "name": "aleo-addon",
+  "version": "1.0.0",
+  "description": "support core methods in aleo project",
+  "main": "index.node",
+  "types": "./index.d.ts",
+  "private": true,
+  "scripts": {
+    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
+    "install": "npm run build-release",
+    "test": "cargo test && mocha"
+  },
+  "author": "hexcola",
+  "license": "ISC",
+  "devDependencies": {
+    "cargo-cp-artifact": "^0.1",
+    "mocha": "^10.1.0"
+  }
+}
